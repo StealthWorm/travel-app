@@ -1,0 +1,35 @@
+<header
+  class="bg-gradient-to-r from-blue-500 to-purple-500 text-white p-6 shadow-lg">
+  <div class="text-center">
+    <h1 class="text-2xl font-bold">Travel App</h1>
+    <p class="text-lg mt-2">Your travel companion</p>
+  </div>
+
+  <div class="mt-4">
+    <hr class="border-t border-blue-300 opacity-50" />
+  </div>
+
+  <nav class="flex justify-center mt-4">
+    <ul class="flex justify-center space-x-4 text-white font-semibold">
+      <li><a href="/pages/categories"
+          class="text-white hover:bg-zinc-50/20 px-4 py-2 rounded-md transition-colors">Categories</a></li>
+      <li><a href="/pages/about"
+          class="text-white hover:bg-zinc-50/20 px-4 py-2 rounded-md transition-colors">About</a></li>
+      <li><a href="/pages/contact"
+          class="text-white hover:bg-zinc-50/20 px-4 py-2 rounded-md transition-colors">Contact</a></li>
+      <li><a href="/pages/login"
+          class="text-white hover:bg-zinc-50/20 px-4 py-2 rounded-md transition-colors">Login</a></li>
+      <li><a href="/pages/register"
+          class="text-white hover:bg-zinc-50/20 px-4 py-2 rounded-md transition-colors">Register</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- router-outlet é um componente que permite que o Angular renderize as rotas filhas -->
+<router-outlet></router-outlet>
+
+<footer class="bg-gray-800 text-white p-6">
+  <div class="text-center">
+    <p>&copy; 2025 Travel App. All rights reserved.</p>
+  </div>
+</footer>
