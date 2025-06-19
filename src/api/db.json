@@ -1,0 +1,19 @@
+{
+  "categories": [
+    {
+      "id": "2",
+      "name": "Bars",
+      "description": "Bars in the area"
+    },
+    {
+      "id": "3",
+      "name": "Parks",
+      "description": "Parks in the area"
+    },
+    {
+      "name": "Rooms UPDATED",
+      "description": "Rooms in the area",
+      "id": "4"
+    }
+  ]
+}
