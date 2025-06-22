@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { TemplateRoutingModule } from './template-routing-module';
+import { TemplateRoutingModule } from './template-routing.module';
 import { LayoutComponent } from './layout/layout.component';
-import { CategoryModule } from '../category/category-module';
+import { CategoryModule } from '../category/category.module';
 
 @NgModule({
   declarations: [

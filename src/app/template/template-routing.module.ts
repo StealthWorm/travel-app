@@ -10,7 +10,7 @@ const routes: Routes = [
       {
         path: 'categories',
         // lazy loading para o carregamento das rotas do category na tela do template (/pages/categories)
-        loadChildren: () => import('../category/category-module').then(m => m.CategoryModule),
+        loadChildren: () => import('../category/category.module').then(m => m.CategoryModule),
         pathMatch: 'full',
         data: { titulo: 'Categorias', subTitulo: 'Realize o cadastro de novas categorias' },
       }

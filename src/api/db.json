@@ -14,6 +14,16 @@
       "name": "Rooms UPDATED",
       "description": "Rooms in the area",
       "id": "4"
+    },
+    {
+      "id": "2924",
+      "name": "lugar novo",
+      "description": "um lugar legal"
+    },
+    {
+      "id": "3270",
+      "name": "asdasd",
+      "description": "asdasdasd"
     }
   ]
 }

@@ -5,7 +5,7 @@ const routes: Routes = [
   {
     path: 'pages',
     // lazy loading para o carregamento das rotas do template na tela principal (/pages)
-    loadChildren: () => import('./template/template-module').then(m => m.TemplateModule)
+    loadChildren: () => import('./template/template.module').then(m => m.TemplateModule)
   }
 ];
 

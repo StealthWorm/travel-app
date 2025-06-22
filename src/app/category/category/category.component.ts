@@ -1,16 +1,17 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { CategoryService } from '../category.service';
 
 @Component({
   selector: 'app-category',
   standalone: false,
-  templateUrl: './category.html',
-  styleUrl: './category.scss'
+  templateUrl: './category.component.html',
+  styleUrl: './category.component.scss'
 })
-export class Category {
+export class CategoryComponent {
   formFields: FormGroup;
 
-  constructor() {
+  constructor(private categoryService: CategoryService) {
     this.formFields = new FormGroup({
       name: new FormControl('', Validators.required),
       description: new FormControl('', Validators.required)
@@ -21,8 +22,15 @@ export class Category {
     this.formFields.markAllAsTouched(); // marca todos os campos como tocados
 
     if (this.formFields.valid) {
-      console.log('Formulário submetido:', this.formFields.value);
-      console.log('Formulário válido:', this.formFields.valid);
+      // "subscribe" é um método do Observable que permite observar a resposta do servidor reativamente
+      this.categoryService.createCategory(this.formFields.value).subscribe({
+        next: () => {
+          this.formFields.reset();
+        },
+        error: (error) => {
+          console.error('Erro ao criar categoria:', error);
+        }
+      });
     }
   }
 

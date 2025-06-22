@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { CategoryRoutingModule } from './category-routing-module';
-import { Category } from './category/category';
+import { CategoryRoutingModule } from './category-routing.module';
+import { CategoryComponent } from './category/category.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    Category
+    CategoryComponent
   ],
   imports: [
     CommonModule,
