@@ -13,6 +13,12 @@ const routes: Routes = [
         loadChildren: () => import('../category/category.module').then(m => m.CategoryModule),
         pathMatch: 'full',
         data: { titulo: 'Categorias', subTitulo: 'Realize o cadastro de novas categorias' },
+      },
+      {
+        path: 'places',
+        loadChildren: () => import('../places/places.module').then(m => m.PlacesModule),
+        pathMatch: 'full',
+        data: { titulo: 'Lugares', subTitulo: 'Realize o cadastro de novos lugares' },
       }
     ]
   }
