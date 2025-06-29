@@ -2,15 +2,17 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { PlacesRoutingModule } from './places-routing.module';
-import { Place } from './place/place';
+import { PlaceComponent } from './place/place.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    Place
+    PlaceComponent
   ],
   imports: [
     CommonModule,
-    PlacesRoutingModule
+    PlacesRoutingModule,
+    ReactiveFormsModule // diferente do FormsModule, o ReactiveFormsModule é mais flexível e permite criar formulários reativos
   ]
 })
 export class PlacesModule { }
