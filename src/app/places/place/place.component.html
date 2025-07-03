@@ -28,7 +28,7 @@
         class="text-red-500 text-sm"
         id="name-error"
         *ngIf="isFieldInvalid('name')">
-        Campo obrigatório
+        {{ isFieldInvalid('name') }}
       </span>
     </div>
 
@@ -50,6 +50,12 @@
           {{ category.name }}
         </option>
       </select>
+      <span
+        class="text-red-500 text-sm"
+        id="category-error"
+        *ngIf="isFieldInvalid('category')">
+        {{ isFieldInvalid('category') }}
+      </span>
     </div>
 
     <!-- location -->
@@ -72,7 +78,7 @@
         class="text-red-500 text-sm"
         id="location-error"
         *ngIf="isFieldInvalid('location')">
-        Campo obrigatório
+        {{ isFieldInvalid('location') }}
       </span>
     </div>
     <!-- imageUrl -->
@@ -95,7 +101,7 @@
         class="text-red-500 text-sm"
         id="imageUrl-error"
         *ngIf="isFieldInvalid('imageUrl')">
-        Campo obrigatório
+        {{ isFieldInvalid('imageUrl') }}
       </span>
     </div>
 
@@ -121,7 +127,7 @@
         class="text-red-500 text-sm"
         id="rating-error"
         *ngIf="isFieldInvalid('rating')">
-        Campo obrigatório
+        {{ isFieldInvalid('rating') }}
       </span>
     </div>
 
