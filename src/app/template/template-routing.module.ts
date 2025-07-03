@@ -19,6 +19,12 @@ const routes: Routes = [
         loadChildren: () => import('../places/places.module').then(m => m.PlacesModule),
         pathMatch: 'full',
         data: { titulo: 'Lugares', subTitulo: 'Realize o cadastro de novos lugares' },
+      },
+      {
+        path: 'gallery',
+        loadChildren: () => import('../gallery/gallery.module').then(m => m.GalleryModule),
+        pathMatch: 'full',
+        data: { titulo: 'Galeria', subTitulo: 'Realize o cadastro de novas fotos' },
       }
     ]
   }
