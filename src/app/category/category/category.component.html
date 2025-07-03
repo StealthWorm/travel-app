@@ -26,7 +26,7 @@
         class="text-red-500 text-sm"
         id="name-error"
         *ngIf="isFieldInvalid('name')">
-        Campo obrigatório
+        {{ isFieldInvalid('name') }}
       </span>
     </div>
 
@@ -50,7 +50,7 @@
         class="text-red-500 text-sm"
         id="description-error"
         *ngIf="isFieldInvalid('description')">
-        Campo obrigatório
+        {{ isFieldInvalid('description') }}
       </span>
     </div>
 

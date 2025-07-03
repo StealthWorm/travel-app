@@ -13,8 +13,8 @@ export class CategoryComponent {
 
   constructor(private categoryService: CategoryService) {
     this.formFields = new FormGroup({
-      name: new FormControl('', Validators.required),
-      description: new FormControl('', Validators.required)
+      name: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      description: new FormControl('', [Validators.required, Validators.minLength(10)])
     });
   }
 
@@ -34,9 +34,23 @@ export class CategoryComponent {
     }
   }
 
-  isFieldInvalid(field: string): boolean {
+  isFieldInvalid(field: string): string | boolean {
     const formField = this.formFields.get(field);
 
-    return formField?.invalid && formField?.touched && formField?.errors?.['required'];
+    if (formField?.invalid && formField?.touched) {
+      if (formField?.errors?.['required']) {
+        return 'Campo obrigatório';
+      }
+      if (formField?.errors?.['minlength']) {
+        if (field === 'name') {
+          return 'Mínimo de 3 caracteres';
+        }
+        if (field === 'description') {
+          return 'Mínimo de 10 caracteres';
+        }
+      }
+    }
+
+    return false;
   }
 }
