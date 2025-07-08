@@ -35,22 +35,82 @@
     {
       "id": "1",
       "name": "Bar do Zé",
-      "description": "Bar do Zé in the area"
+      "description": "Bar do Zé in the area",
+      "category": "Bars",
+      "location": "Rua das Flores",
+      "imageUrl": "https://tse1.mm.bing.net/th/id/OIP._ZqkITqiQRJoY_-bstcOngHaFj?pid=Api&P=0&h=180",
+      "rating": 2
     },
     {
       "id": "e3ea",
       "name": "Restaurantes teste",
       "category": "Bars",
       "location": "qualquer",
-      "imageUrl": "sdasdasd",
+      "imageUrl": "https://www.travelandleisure.com/thmb/HDGpaa9IBKgK71w7UDgoAZXesC4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/TAL-rothenburg-ob-der-tauber-PLACESGER0623-a9378cf8ee2b45be96e72e662597a036.jpg",
       "rating": 2
     },
     {
       "id": "04ee",
-      "name": "asd",
+      "name": "Pub Central",
       "category": "Bars",
-      "location": "asd",
-      "imageUrl": "https://fastly.picsum.photos/id/513/200/300.jpg",
+      "location": "Centro",
+      "imageUrl": "https://housing.com/news/wp-content/uploads/2022/11/LONDON-SIGHTSEEING-FEATURE-compressed.jpg",
+      "rating": 5
+    },
+    {
+      "id": "24ba",
+      "name": "Café Colonial",
+      "category": "Cafes",
+      "location": "Rua das Flores",
+      "imageUrl": "https://cdn.getyourguide.com/img/location/5ffeb5d2b3a42.jpeg/88.jpg",
+      "rating": 4
+    },
+    {
+      "id": "19cf",
+      "name": "Cantinho da Serra",
+      "category": "Restaurants",
+      "location": "Serra Verde",
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7jqF7fErf2iS1GgH_YzqqEU1Etc2N-S5Tgw&s",
+      "rating": 5
+    },
+    {
+      "id": "87df",
+      "name": "Praça Sunset",
+      "category": "Outdoors",
+      "location": "Lago Norte",
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTY3Y2z9se47ykBy3YOwz8TOSG-t7TowvKx3w&s",
+      "rating": 4
+    },
+    {
+      "id": "35ac",
+      "name": "Galeria Urbana",
+      "category": "Museums",
+      "location": "Bairro Antigo",
+      "imageUrl": "https://tse4.mm.bing.net/th/id/OIP.kQfuIZV2O1MA2pnUl6yc6gHaFL?pid=Api&P=0&h=180",
+      "rating": 3
+    },
+    {
+      "id": "49b7",
+      "name": "Feira da Lua",
+      "category": "Markets",
+      "location": "Zona Oeste",
+      "imageUrl": "https://folhadolitoral.com.br/wp-content/uploads/2020/03/bmzjzaef_1584425531.jpg",
+      "rating": 4
+    },
+    {
+      "id": "5ce1",
+      "name": "Vila do Vinho",
+      "category": "Wineries",
+      "location": "Vale dos Vinhedos",
+      "imageUrl": "https://images.unsplash.com/photo-1600891964599-f61ba0e24092",
+      "rating": 5
+    },
+    {
+      "id": "6fd2",
+      "name": "Mirante da Paz",
+      "category": "Viewpoints",
+      "location": "Colina Azul",
+      "imageUrl": "https://www.viagensecaminhos.com/wp-content/uploads/2015/12/mirante-da-paz-rio-de-janeiro-1024x576.jpg",
       "rating": 5
     }
   ]

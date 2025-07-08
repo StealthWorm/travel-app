@@ -1,1 +1,50 @@
-<p>gallery works!</p>
+<!-- Filtros -->
+<div class="p-4 bg-white shadow">
+  <div class="flex flex-col md:flex-row items-center justify-center gap-4">
+    <input
+      type="text"
+      class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      placeholder="Pesquisar pelo nome do lugar" />
+    <select
+      class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+      <option value>Todas as categorias</option>
+      <option *ngFor="let category of categories" [value]="category.id">{{
+        category.name }}</option>
+    </select>
+  </div>
+</div>
+
+<!-- Listagem de Lugares -->
+<div class="grid p-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+  <div
+    *ngFor="let place of places"
+    class="bg-white rounded-lg shadow-md overflow-hidden border-2 p-4 hover:shadow-lg hover:border-blue-500 transition-all duration-300">
+    <img
+      [src]="place.imageUrl"
+      [alt]="place.name"
+      class="w-full h-48 object-cover rounded-lg mb-4">
+    <div class="flex justify-between items-center">
+      <h2 class="text-2xl font-semibold mb-2 text-blue-500">{{ place.name
+        }}</h2>
+    </div>
+    <div class="flex items-center gap-2">
+      <strong class="text-gray-600 text-bold"> Categoria:</strong>
+      <p
+        class="text-zinc-100 bg-blue-500 rounded-full px-2 py-1 text-sm font-bold">
+        {{ place.category }}</p>
+    </div>
+    <div class="flex justify-between items-center">
+      <strong class="text-gray-600 text-bold"> Localização:</strong>
+      <p class="text-gray-600 mb-4 text-sm"> {{ place.location }}</p>
+    </div>
+    <div class="flex justify-between items-center">
+      <strong class="text-gray-600 text-bold"> Avaliação:</strong>
+      <div
+        class="flex items-center justify-center">
+        <p class="text-yellow-500 font-bold text-3xl">
+          {{ getRating(place.rating || 0) }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
