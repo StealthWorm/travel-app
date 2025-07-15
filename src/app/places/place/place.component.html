@@ -46,7 +46,7 @@
         formControlName="category"
         class="p-3 w-full rounded-md border border-gray-300 focus:outline-none focus:ring focus:ring-indigo-500 sm:text-sm">
         <option value>Selecione uma categoria</option>
-        <option *ngFor="let category of categories" [value]="category.name">
+        <option *ngFor="let category of categories" [value]="category.id">
           {{ category.name }}
         </option>
       </select>

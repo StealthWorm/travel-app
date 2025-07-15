@@ -1,7 +1,9 @@
+import { Category } from "../category/category";
+
 export class Place {
-  id?: number;
+  id?: string;
   name?: string;
-  category?: string;
+  category?: Category;
   location?: string;
   imageUrl?: string;
   rating?: number;

@@ -42,7 +42,18 @@ export class PlaceComponent {
     this.formFields.markAllAsTouched();
 
     if (this.formFields.valid) {
-      this.placeService.createPlace(this.formFields.value).subscribe({
+      const formValue = this.formFields.value;
+
+      // Find the selected category object
+      const selectedCategory = this.categories.find(cat => cat.id === formValue.category);
+
+      // Create the place object with the full category
+      const placeData = {
+        ...formValue,
+        category: selectedCategory
+      };
+
+      this.placeService.createPlace(placeData).subscribe({
         next: () => {
           console.log('Lugar criado com sucesso');
           this.formFields.reset();
