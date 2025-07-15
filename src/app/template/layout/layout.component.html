@@ -2,7 +2,10 @@
   class="bg-gradient-to-r from-blue-500 to-purple-500 text-white p-6 shadow-lg sticky top-0 z-10">
   <div class="text-center">
     <h1 class="text-2xl font-bold">Travel App</h1>
-    <p class="text-lg mt-2">Your travel companion</p>
+    <div *ngIf="pageProps.titulo" class="mt-4">
+      <h2 class="text-xl font-semibold">{{ pageProps.titulo }}</h2>
+      <p class="text-sm opacity-90">{{ pageProps.subtitulo }}</p>
+    </div>
   </div>
 
   <div class="mt-4">
@@ -11,20 +14,20 @@
 
   <nav class="flex justify-center mt-4">
     <ul class="flex justify-center space-x-4 text-white font-semibold">
-      <li><a href="/pages/categories"
+      <li><a routerLink="/pages/categories"
           class="text-white hover:bg-zinc-50/20 px-4 py-2 rounded-md transition-colors">Categories</a></li>
-      <li><a href="/pages/places"
+      <li><a routerLink="/pages/places"
           class="text-white hover:bg-zinc-50/20 px-4 py-2 rounded-md transition-colors">Places</a></li>
-      <li><a href="/pages/gallery"
+      <li><a routerLink="/pages/gallery"
           class="text-white hover:bg-zinc-50/20 px-4 py-2 rounded-md transition-colors">Gallery</a></li>
-      <li><a href="/pages/about"
-          class="text-white hover:bg-zinc-50/20 px-4 py-2 rounded-md transition-colors">About</a></li>
-      <li><a href="/pages/contact"
-          class="text-white hover:bg-zinc-50/20 px-4 py-2 rounded-md transition-colors">Contact</a></li>
-      <li><a href="/pages/login"
-          class="text-white hover:bg-zinc-50/20 px-4 py-2 rounded-md transition-colors">Login</a></li>
-      <li><a href="/pages/register"
-          class="text-white hover:bg-zinc-50/20 px-4 py-2 rounded-md transition-colors">Register</a></li>
+      <li><a routerLink="/pages/login" disabled
+          class="text-white/50 cursor-not-allowed enabled:text-white enabled:hover:bg-zinc-50/20 enabled:cursor-default px-4 py-2 rounded-md transition-colors
+        ">Login</a></li>
+      <li><a
+          routerLink="/pages/register"
+          disabled
+          class="text-white/50 cursor-not-allowed enabled:text-white enabled:hover:bg-zinc-50/20 enabled:cursor-default px-4 py-2 rounded-md transition-colors
+          ">Register</a></li>
     </ul>
   </nav>
 </header>

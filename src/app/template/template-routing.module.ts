@@ -24,7 +24,7 @@ const routes: Routes = [
         path: 'gallery',
         loadChildren: () => import('../gallery/gallery.module').then(m => m.GalleryModule),
         pathMatch: 'full',
-        data: { titulo: 'Galeria', subTitulo: 'Realize o cadastro de novas fotos' },
+        data: { titulo: 'Galeria', subTitulo: 'Procure por seus lugares favoritos' },
       }
     ]
   }
