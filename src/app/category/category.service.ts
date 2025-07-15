@@ -23,7 +23,7 @@ export class CategoryService {
     return this.http.put<Category>(`http://localhost:3000/categories/${category.id}`, category);
   }
 
-  deleteCategory(id: number): Observable<void> {
+  deleteCategory(id: string): Observable<void> {
     return this.http.delete<void>(`http://localhost:3000/categories/${id}`);
   }
 }
