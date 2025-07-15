@@ -11,24 +11,34 @@
       "description": "Parks in the area"
     },
     {
-      "name": "Rooms UPDATED",
-      "description": "Rooms in the area",
-      "id": "4"
+      "id": "4",
+      "name": "Restaurants",
+      "description": "Restaurants in the area"
     },
     {
       "id": "2924",
-      "name": "lugar novo",
-      "description": "um lugar legal"
+      "name": "Museums",
+      "description": "Museums in the area"
     },
     {
       "id": "3270",
-      "name": "asdasd",
-      "description": "asdasdasd"
+      "name": "Cafes",
+      "description": "Cafés in the area"
     },
     {
-      "id": "aa29",
-      "name": "a",
-      "description": "aa"
+      "id": "3271",
+      "name": "Wineries",
+      "description": "Wineries in the area"
+    },
+    {
+      "id": "3272",
+      "name": "Viewpoints",
+      "description": "Viewpoints in the area"
+    },
+    {
+      "id": "5",
+      "name": "Markets",
+      "description": "Markets in the area"
     }
   ],
   "places": [
@@ -36,7 +46,11 @@
       "id": "1",
       "name": "Bar do Zé",
       "description": "Bar do Zé in the area",
-      "category": "Bars",
+      "category": {
+        "id": "2",
+        "name": "Bars",
+        "description": "Bars in the area"
+      },
       "location": "Rua das Flores",
       "imageUrl": "https://tse1.mm.bing.net/th/id/OIP._ZqkITqiQRJoY_-bstcOngHaFj?pid=Api&P=0&h=180",
       "rating": 2
@@ -44,7 +58,11 @@
     {
       "id": "e3ea",
       "name": "Restaurantes teste",
-      "category": "Bars",
+      "category": {
+        "id": "4",
+        "name": "Restaurants",
+        "description": "Restaurants in the area"
+      },
       "location": "qualquer",
       "imageUrl": "https://www.travelandleisure.com/thmb/HDGpaa9IBKgK71w7UDgoAZXesC4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/TAL-rothenburg-ob-der-tauber-PLACESGER0623-a9378cf8ee2b45be96e72e662597a036.jpg",
       "rating": 2
@@ -52,7 +70,11 @@
     {
       "id": "04ee",
       "name": "Pub Central",
-      "category": "Bars",
+      "category": {
+        "id": "2",
+        "name": "Bars",
+        "description": "Bars in the area"
+      },
       "location": "Centro",
       "imageUrl": "https://housing.com/news/wp-content/uploads/2022/11/LONDON-SIGHTSEEING-FEATURE-compressed.jpg",
       "rating": 5
@@ -60,7 +82,11 @@
     {
       "id": "24ba",
       "name": "Café Colonial",
-      "category": "Cafes",
+      "category": {
+        "id": "3270",
+        "name": "Cafes",
+        "description": "Cafés in the area"
+      },
       "location": "Rua das Flores",
       "imageUrl": "https://cdn.getyourguide.com/img/location/5ffeb5d2b3a42.jpeg/88.jpg",
       "rating": 4
@@ -68,7 +94,11 @@
     {
       "id": "19cf",
       "name": "Cantinho da Serra",
-      "category": "Restaurants",
+      "category": {
+        "id": "4",
+        "name": "Restaurants",
+        "description": "Restaurants in the area"
+      },
       "location": "Serra Verde",
       "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7jqF7fErf2iS1GgH_YzqqEU1Etc2N-S5Tgw&s",
       "rating": 5
@@ -76,7 +106,11 @@
     {
       "id": "87df",
       "name": "Praça Sunset",
-      "category": "Outdoors",
+      "category": {
+        "id": "3",
+        "name": "Parks",
+        "description": "Parks in the area"
+      },
       "location": "Lago Norte",
       "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTY3Y2z9se47ykBy3YOwz8TOSG-t7TowvKx3w&s",
       "rating": 4
@@ -84,7 +118,11 @@
     {
       "id": "35ac",
       "name": "Galeria Urbana",
-      "category": "Museums",
+      "category": {
+        "id": "2924",
+        "name": "Museums",
+        "description": "Museums in the area"
+      },
       "location": "Bairro Antigo",
       "imageUrl": "https://tse4.mm.bing.net/th/id/OIP.kQfuIZV2O1MA2pnUl6yc6gHaFL?pid=Api&P=0&h=180",
       "rating": 3
@@ -92,7 +130,11 @@
     {
       "id": "49b7",
       "name": "Feira da Lua",
-      "category": "Markets",
+      "category": {
+        "id": "5",
+        "name": "Markets",
+        "description": "Markets in the area"
+      },
       "location": "Zona Oeste",
       "imageUrl": "https://folhadolitoral.com.br/wp-content/uploads/2020/03/bmzjzaef_1584425531.jpg",
       "rating": 4
@@ -100,7 +142,11 @@
     {
       "id": "5ce1",
       "name": "Vila do Vinho",
-      "category": "Wineries",
+      "category": {
+        "id": "3271",
+        "name": "Wineries",
+        "description": "Wineries in the area"
+      },
       "location": "Vale dos Vinhedos",
       "imageUrl": "https://images.unsplash.com/photo-1600891964599-f61ba0e24092",
       "rating": 5
@@ -108,10 +154,26 @@
     {
       "id": "6fd2",
       "name": "Mirante da Paz",
-      "category": "Viewpoints",
+      "category": {
+        "id": "3272",
+        "name": "Viewpoints",
+        "description": "Viewpoints in the area"
+      },
       "location": "Colina Azul",
       "imageUrl": "https://www.viagensecaminhos.com/wp-content/uploads/2015/12/mirante-da-paz-rio-de-janeiro-1024x576.jpg",
       "rating": 5
+    },
+    {
+      "id": "c103",
+      "name": "Restaurante Estrela",
+      "category": {
+        "id": "4",
+        "name": "Restaurants",
+        "description": "Restaurants in the area"
+      },
+      "location": "São Paulo",
+      "imageUrl": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/0d/7d/b5/amplo-salao.jpg",
+      "rating": 4
     }
   ]
 }
