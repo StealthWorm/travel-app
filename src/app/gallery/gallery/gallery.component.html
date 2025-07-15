@@ -1,17 +1,33 @@
 <!-- Filtros -->
 <div class="p-4 bg-white shadow">
-  <div class="flex flex-col md:flex-row items-center justify-center gap-4">
+  <form
+    id="gallery-form"
+    #galleryForm="ngForm"
+    [formGroup]="formFields"
+    (ngSubmit)="getFilteredPlaces(formFields.value.name, formFields.value.category)"
+    class="flex flex-col md:flex-row items-center justify-center gap-4">
     <input
+      id="name"
       type="text"
+      name="name"
+      formControlName="name"
       class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
       placeholder="Pesquisar pelo nome do lugar" />
     <select
+      id="category"
+      name="category"
+      formControlName="category"
       class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
       <option value>Todas as categorias</option>
       <option *ngFor="let category of categories" [value]="category.id">{{
         category.name }}</option>
     </select>
-  </div>
+    <button
+      type="submit"
+      class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-all duration-300">
+      Pesquisar
+    </button>
+  </form>
 </div>
 
 <!-- Listagem de Lugares -->
@@ -24,14 +40,15 @@
       [alt]="place.name"
       class="w-full h-48 object-cover rounded-lg mb-4">
     <div class="flex justify-between items-center">
-      <h2 class="text-2xl font-semibold mb-2 text-blue-500">{{ place.name
-        }}</h2>
+      <h2 class="text-2xl font-semibold mb-2 text-blue-500">
+        {{ place.name }}
+      </h2>
     </div>
-    <div class="flex items-center gap-2">
+    <div class="flex items-center gap-2" *ngIf="place.category">
       <strong class="text-gray-600 text-bold"> Categoria:</strong>
       <p
-        class="text-zinc-100 bg-blue-500 rounded-full px-2 py-1 text-sm font-bold">
-        {{ place.category }}</p>
+        class="text-white rounded-full px-2 py-1 text-sm font-bold bg-blue-500">
+        {{ place.category.name }}</p>
     </div>
     <div class="flex justify-between items-center">
       <strong class="text-gray-600 text-bold"> Localização:</strong>
