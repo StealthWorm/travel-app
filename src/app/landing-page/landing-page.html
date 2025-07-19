@@ -1,0 +1,29 @@
+<div
+  class="flex flex-col items-center justify-center h-screen bg-gradient-to-r from-blue-500 to-purple-500 gap-4">
+  <div class="flex flex-col items-center justify-center">
+    <h1 class="text-4xl font-bold animate-pulse text-white mb-6">Travel App</h1>
+    <p class="text-2xl font-bold text-blue-300">Welcome to the Travel App</p>
+    <p class="text-2xl font-bold text-blue-300">Please login to continue</p>
+  </div>
+  <div
+    class="flex items-center justify-center gap-4 border-2 border-white/50 rounded-md p-4">
+    <button
+      *ngIf="isLoggedIn()"
+      class="bg-white text-blue-500 hover:bg-blue-200 hover:text-white p-2 rounded-md transition-all duration-300"
+      (click)="redirect()">
+      <p class="text-blue-500">Bem vindo de volta, <span class="font-bold">{{
+          profile?.name
+          }}</span>!!</p>
+      <p class="text-xs text-gray-500">Clique aqui para continuar</p>
+    </button>
+    <button
+      *ngIf="!isLoggedIn()"
+      class="flex items-center gap-2 bg-white text-blue-500 font-bold hover:bg-blue-200 hover:text-white p-2 rounded-md transition-all duration-300"
+      (click)="googleLogin()">
+      <img
+        src="https://cdn2.iconfinder.com/data/icons/social-icons-33/128/Google-1024.png"
+        alt="Google" class="w-6 h-6" />
+      Google Login
+    </button>
+  </div>
+</div>

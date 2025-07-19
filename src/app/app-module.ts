@@ -4,10 +4,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
 import { provideHttpClient, withFetch } from '@angular/common/http';
+import { LandingPage } from './landing-page/landing-page';
 
 @NgModule({
   declarations: [
-    App
+    App,
+    LandingPage
   ],
   imports: [
     BrowserModule,
