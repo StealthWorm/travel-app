@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Profile } from './profile.model';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AuthGoogleService } from '../auth-google.service';
 
 @Component({
   selector: 'app-landing-page',
@@ -11,18 +12,22 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class LandingPage {
   profile: Profile | undefined;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private authGoogleService: AuthGoogleService) { }
 
   redirect() {
     this.router.navigate(['/pages/gallery']);
   }
 
   googleLogin() {
-    this.router.navigate(['/pages/gallery']);
+    this.authGoogleService.login();
   }
 
-  isLoggedIn() {
-    return this.profile !== undefined;
+  googleLogout() {
+    this.authGoogleService.logout();
   }
 
+  get isLoggedIn() {
+    this.profile = this.authGoogleService.getUserProfile();
+    return this.authGoogleService.isLoggedIn$;
+  }
 }

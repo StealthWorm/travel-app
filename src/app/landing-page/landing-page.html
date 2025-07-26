@@ -9,12 +9,16 @@
     class="flex items-center justify-center gap-4 border-2 border-white/50 rounded-md p-4">
     <button
       *ngIf="isLoggedIn()"
-      class="bg-white text-blue-500 hover:bg-blue-200 hover:text-white p-2 rounded-md transition-all duration-300"
+      class="group flex items-center bg-white text-blue-500 font-bold p-3 rounded-full transition-transform duration-800"
       (click)="redirect()">
-      <p class="text-blue-500">Bem vindo de volta, <span class="font-bold">{{
-          profile?.name
-          }}</span>!!</p>
-      <p class="text-xs text-gray-500">Clique aqui para continuar</p>
+      <img [src]="profile?.picture" alt="Google"
+        class="w-10 h-10 rounded-full -mr-12 group-hover:-mr-4 transition-all transition-discrete" />
+      <div class="flex flex-col bg-white px-4 rounded-full">
+        <p class="text-blue-500">Bem vindo de volta, <span class="font-bold">{{
+            profile?.name
+            }}</span>!!</p>
+        <p class="text-xs text-gray-500">Clique aqui para continuar</p>
+      </div>
     </button>
     <button
       *ngIf="!isLoggedIn()"

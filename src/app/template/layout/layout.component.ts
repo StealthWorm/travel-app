@@ -3,6 +3,7 @@ import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { LayoutProps } from './layoutProps';
 import { Title } from '@angular/platform-browser';
+import { AuthGoogleService } from '../../auth-google.service';
 
 @Component({
   selector: 'app-layout',
@@ -19,7 +20,8 @@ export class LayoutComponent implements OnInit {
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
-    private titleService: Title
+    private titleService: Title,
+    private authGoogleService: AuthGoogleService
   ) { }
 
   ngOnInit(): void {
@@ -49,5 +51,9 @@ export class LayoutComponent implements OnInit {
       this.pageProps.subtitulo = data['subTitulo'] || '';
       this.titleService.setTitle(`${this.pageProps.titulo} - ${this.pageProps.subtitulo}`);
     });
+  }
+
+  googleLogout() {
+    this.authGoogleService.logout();
   }
 }

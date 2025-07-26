@@ -20,14 +20,8 @@
           class="text-white hover:bg-zinc-50/20 px-4 py-2 rounded-md transition-colors">Places</a></li>
       <li><a routerLink="/pages/gallery"
           class="text-white hover:bg-zinc-50/20 px-4 py-2 rounded-md transition-colors">Gallery</a></li>
-      <li><a routerLink="/pages/login" disabled
-          class="text-white/50 cursor-not-allowed enabled:text-white enabled:hover:bg-zinc-50/20 enabled:cursor-default px-4 py-2 rounded-md transition-colors
-        ">Login</a></li>
-      <li><a
-          routerLink="/pages/register"
-          disabled
-          class="text-white/50 cursor-not-allowed enabled:text-white enabled:hover:bg-zinc-50/20 enabled:cursor-default px-4 py-2 rounded-md transition-colors
-          ">Register</a></li>
+      <li><a (click)="googleLogout()"
+          class="text-white hover:bg-zinc-50/20 px-4 py-2 rounded-md transition-colors">Logout</a></li>
     </ul>
   </nav>
 </header>
