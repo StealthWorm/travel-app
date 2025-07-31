@@ -2,6 +2,7 @@ import { inject, Injectable, signal } from '@angular/core';
 import { OAuthService, AuthConfig } from 'angular-oauth2-oidc';
 import { authConfig } from './auth.config';
 import { Router } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,17 +12,44 @@ export class AuthGoogleService {
   private router: Router = inject(Router);
   private isLoggedIn = signal(false); // verifica se o usuário está logado e atualiza a UI
   private userProfile = signal<any>(null); // armazena o perfil do usuário. Usamos any pois podemos mudar o provedor depois
+  private authInitSubject = new BehaviorSubject<boolean>(false); // controla o estado de inicialização da autenticação
 
   constructor() {
     this.initConfig();
   }
 
-  initConfig() {
-    this.oauthService.configure(authConfig);
-    this.oauthService.setupAutomaticSilentRefresh(); // atualiza o token automaticamente, sem precisar de interação do usuário
-    this.oauthService.loadDiscoveryDocumentAndTryLogin().then(() => {
-      this.isLoggedIn.set(this.oauthService.hasValidAccessToken());
-      this.userProfile.set(this.oauthService.getIdentityClaims());
+  async initConfig() {
+    try {
+      this.oauthService.configure(authConfig);
+      this.oauthService.setupAutomaticSilentRefresh();
+
+      await this.oauthService.loadDiscoveryDocumentAndTryLogin();
+
+      const isAuthenticated = this.oauthService.hasValidAccessToken();
+      this.isLoggedIn.set(isAuthenticated);
+
+      if (isAuthenticated) {
+        this.userProfile.set(this.oauthService.getIdentityClaims());
+      }
+
+      this.authInitSubject.next(true);
+    } catch (error) {
+      console.error('Error initializing authentication:', error);
+      this.authInitSubject.next(true);
+    }
+  }
+
+  async waitForAuthInit(): Promise<void> {
+    if (this.authInitSubject.value) {
+      return Promise.resolve();
+    }
+
+    return new Promise((resolve) => {
+      this.authInitSubject.subscribe((initialized) => {
+        if (initialized) {
+          resolve();
+        }
+      });
     });
   }
 
@@ -36,14 +64,20 @@ export class AuthGoogleService {
     this.router.navigate(['/']);
   }
 
-  // $  é usado como uma convenção de nomenclatura para indicar que uma propriedade ou método 
-  // retorna um Observable ou Signal. É uma prática comum na comunidade Angular para tornar o código mais
-  //  legível e identificar facilmente quais propriedades são reativas.
   getIsLoggedIn() {
     return this.isLoggedIn();
   }
 
   getUserProfile() {
     return this.userProfile();
+  }
+
+  refreshAuthState() {
+    const isAuthenticated = this.oauthService.hasValidAccessToken();
+    this.isLoggedIn.set(isAuthenticated);
+
+    if (isAuthenticated) {
+      this.userProfile.set(this.oauthService.getIdentityClaims());
+    }
   }
 }
