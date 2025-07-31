@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Profile } from './profile.model';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { AuthGoogleService } from '../auth-google.service';
 
 @Component({
@@ -26,8 +26,8 @@ export class LandingPage {
     this.authGoogleService.logout();
   }
 
-  get isLoggedIn() {
+  isLoggedIn(): boolean {
     this.profile = this.authGoogleService.getUserProfile();
-    return this.authGoogleService.isLoggedIn$;
+    return this.authGoogleService.getIsLoggedIn();
   }
 }

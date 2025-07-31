@@ -39,8 +39,8 @@ export class AuthGoogleService {
   // $  é usado como uma convenção de nomenclatura para indicar que uma propriedade ou método 
   // retorna um Observable ou Signal. É uma prática comum na comunidade Angular para tornar o código mais
   //  legível e identificar facilmente quais propriedades são reativas.
-  get isLoggedIn$() {
-    return this.isLoggedIn.asReadonly();
+  getIsLoggedIn() {
+    return this.isLoggedIn();
   }
 
   getUserProfile() {

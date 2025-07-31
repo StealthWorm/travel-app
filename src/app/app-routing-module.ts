@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LandingPage } from './landing-page/landing-page';
+import { authGuard } from './guards/auth-guard';
 
 const routes: Routes = [
   {
@@ -11,7 +12,8 @@ const routes: Routes = [
   {
     path: 'pages',
     // lazy loading para o carregamento das rotas do template na tela principal (/pages)
-    loadChildren: () => import('./template/template.module').then(m => m.TemplateModule)
+    loadChildren: () => import('./template/template.module').then(m => m.TemplateModule),
+    canActivate: [authGuard] // protege a rota template pelo authGuard
   }
 ];
 
