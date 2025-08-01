@@ -48,4 +48,6 @@ src/environments/environment.production.ts
 
 # API and database files
 src/api/
+dockerfile
+nginx.conf
 
